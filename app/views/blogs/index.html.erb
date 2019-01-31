@@ -5,10 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image</th>
-      <th>User</th>
+      <th>タイトル</th>
+      <th>内容</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,11 +16,9 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
-        <td><%= blog.image %></td>
-        <td><%= blog.user %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細をみる', blog %></td>
+        <td><%= link_to '編集する', edit_blog_path(blog) %></td>
+        <td><%= link_to '削除する', blog, method: :delete, data: { confirm: '消してもええんか？' } %></td>
       </tr>
     <% end %>
   </tbody>

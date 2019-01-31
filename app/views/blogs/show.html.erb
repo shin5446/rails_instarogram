@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @blog.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>内容:</strong>
   <%= @blog.content %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= image_tag if @blog.image.url  %>
+  <strong>画像:</strong>
+  <%= image_tag @blog.image.url if @blog.image.url %>
+</p>
+
+<p>
+  <strong>ユーザー名:</strong>
+  <%= @blog.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
