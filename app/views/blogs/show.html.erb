@@ -12,12 +12,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @blog.image %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @blog.user %>
+  <%= image_tag if @blog.image.url  %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
