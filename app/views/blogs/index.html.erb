@@ -17,8 +17,10 @@
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
         <td><%= link_to '詳細をみる', blog %></td>
+        <%if current_user.try(:id) == blog.user_id %>
         <td><%= link_to '編集する', edit_blog_path(blog) %></td>
         <td><%= link_to '削除する', blog, method: :delete, data: { confirm: '消してもええんか？' } %></td>
+　　　　<% end %>      
       </tr>
     <% end %>
   </tbody>

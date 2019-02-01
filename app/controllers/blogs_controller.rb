@@ -1,7 +1,8 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-
-  # GET /blogs
+  before_action :logged_in_user, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :destroy]
+# GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
@@ -81,4 +82,19 @@ class BlogsController < ApplicationController
     params.require(:blog).permit(:title, :content, :image, :image_cache, :user_id)
   end
   
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "ログインしてください！"
+      redirect_to new_session_path
+    end
+  end
+  
+  def correct_user
+    unless current_user.id == @blog.user_id
+      flash[:danger] = "他人の投稿は編集できません！"
+      redirect_to new_session_path
+    end
+  end
+
 end
+
