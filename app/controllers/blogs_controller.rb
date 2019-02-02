@@ -11,6 +11,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    unless current_user == nil
+       @favorite = current_user.favorites.find_by(blog_id: @blog.id)
+    end             
   end
 
   # GET /blogs/new

@@ -52,4 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
+  
+  config.action_mailer.default_url_options = { host: 'shin-rails-shin5446.c9users.io' }
+  config.action_mailer.delivery_method = :letter_opener_web
 end

@@ -19,7 +19,17 @@
   <strong>ユーザー名:</strong>
   <%= @blog.user.name %>
 </p>
+<% unless current_user == nil %>
+ <% unless @blog.user_id == current_user.id %>
+   <% if @favorite.present? %>
+     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+   <% else %>
+     <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+   <% end %>
+ <% end %>
+<% end %>
 <%if current_user.try(:id) == @blog.user_id %>
 <%= link_to 'Edit', edit_blog_path(@blog) %>
 <%end%>
+
 <%= link_to 'Back', blogs_path %>
