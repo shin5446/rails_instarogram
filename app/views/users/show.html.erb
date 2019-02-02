@@ -6,9 +6,9 @@
   <strong>プロフィール画像:</strong>
   <%= image_tag @user.user_image.url if @user.user_image.url %>
 </p>
-<%if current_user.id == @user.id %>
+<!--<if current_user.id == @user.id %>-->
 <%= link_to '編集する', edit_user_path %>
-<% end %>
+<!--< end %>-->
 
 <%= link_to '新規投稿画面へ', new_blog_path %>
 <%= link_to 'お気に入り画像一覧へ', favorite_path %>
