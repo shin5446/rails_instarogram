@@ -1,3 +1,5 @@
+<div class = "center">
+  
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
@@ -7,8 +9,10 @@
   <%= image_tag @user.user_image.url if @user.user_image.url %>
 </p>
 <!--<if current_user.id == @user.id %>-->
-<%= link_to '編集する', edit_user_path %>
+<P class="btn btn-default"><%= link_to '編集する', edit_user_path %></p>
 <!--< end %>-->
 
-<%= link_to '新規投稿画面へ', new_blog_path %>
-<%= link_to 'お気に入り画像一覧へ', favorite_path %>
+<P class="btn btn-default"><%= link_to '新規投稿', new_blog_path %></p>
+<P class="btn btn-default"><%= link_to 'お気に入り', favorite_path %></p>
+
+</div>

@@ -1,6 +1,8 @@
+<div class = "center">
 <h1>お気に入り</h1>
 
   <% @favorites.each do |blog| %>
     <p>画像:<%= image_tag blog.image.url if blog.image.url %></p>
     <p>投稿者:<%= blog.user.name %></p>
   <% end %>
+</div>

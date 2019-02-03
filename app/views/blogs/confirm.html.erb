@@ -1,3 +1,4 @@
+<div class = "form_page">
 <h3>以下の内容で、送信する。</h3>
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
@@ -15,5 +16,6 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
-  <%= form.submit "もどる", name: 'back' %>
+　<%= form.submit "もどる", name: 'back' %>
 <% end %>
+</div>

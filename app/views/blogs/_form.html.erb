@@ -1,7 +1,7 @@
 <%= form_with(model: blog, local: true ,url: choose_new_or_edit) do |form| %>
   <% if blog.errors.any? %>
     <div id="error_explanation"> 
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h2><%= pluralize(blog.errors.count, "件のエラー") %> 以下を確認してください</h2>
 
       <ul>
       <% blog.errors.full_messages.each do |message| %>
@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :blog_content %>
+    <%= form.text_field :content, id: :blog_content %>
   </div>
 
   

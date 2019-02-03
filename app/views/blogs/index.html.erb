@@ -1,6 +1,7 @@
+<div class = "index_page">
 <p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
+<h1>みんなの投稿</h1>
 
 <table>
   <thead>
@@ -16,10 +17,10 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
-        <td><%= link_to '詳細をみる', blog %></td>
+        <td class="btn btn-default"><%= link_to '詳細をみる', blog %></td>
         <%if current_user.try(:id) == blog.user_id %>
-        <td><%= link_to '編集する', edit_blog_path(blog) %></td>
-        <td><%= link_to '削除する', blog, method: :delete, data: { confirm: '消してもええんか？' } %></td>
+        <td class="btn btn-default"><%= link_to '編集する', edit_blog_path(blog) %></td>
+        <td class="btn btn-default"><%= link_to '削除する', blog, method: :delete, data: { confirm: '消してもええんか？' } %></td>
 　　　　<% end %>      
       </tr>
     <% end %>
@@ -28,5 +29,6 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<p class="btn btn-default"><%= link_to '新規投稿', new_blog_path %></p>
+</div>
 

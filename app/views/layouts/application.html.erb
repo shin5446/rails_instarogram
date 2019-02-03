@@ -9,17 +9,31 @@
   </head>
 
   <body>
+  <div id="wrapper">
+   <header>
+    <h1 class = "logo">instarogram</h1>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     
     <% if logged_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+      <p id = "header_logo" class="btn btn-default"><%= link_to "プロフィール", user_path(current_user.id) %></p>
+      <p id = "header_logo" class="btn btn-default"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></p>
     <% else %>
-      <%= link_to "サインアップ", new_user_path %>
-      <%= link_to "ログイン", new_session_path %>
+      <p id = "header_logo" class="btn btn-default"><%= link_to "サインアップ", new_user_path %></p>
+      <p id = "header_logo" class="btn btn-default"><%= link_to "ログイン", new_session_path %></p>
     <% end %>
+   </header>
     <%= yield %>
+   <footer>
+     <div class = "foorter_logo">
+      <li>利用規約</li>
+      <li>採用情報</li>
+      <li>Indstarogramについて</li>
+      <li>ヘルプ</li>
+      <li class = "establishment">©2050-2088 Increments Inc.</li>
+     </div>
+   </footer>
+  </div>
   </body>
 </html>
