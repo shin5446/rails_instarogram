@@ -11,9 +11,9 @@
 <%unless current_user == nil %>
  <% if current_user.id == @user.id %>
  <P class="btn btn-default"><%= link_to '編集する', edit_user_path %></p>
+ <P class="btn btn-default"><%= link_to 'お気に入り', favorite_path %></p>
  <% end %>
 <% end %>
 <P class="btn btn-default"><%= link_to '新規投稿', new_blog_path %></p>
-<P class="btn btn-default"><%= link_to 'お気に入り', favorite_path %></p>
 
 </div>
