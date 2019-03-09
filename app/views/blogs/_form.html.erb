@@ -21,7 +21,7 @@
     <%= form.text_field :content, id: :blog_content %>
   </div>
 
-  
+
   <div class="field">
     <%= form.label :image %>
     <%= image_tag(@blog.image.url)if@blog.image.url %>
@@ -30,6 +30,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, class: "btn btn-default" %>
   </div>
 <% end %>

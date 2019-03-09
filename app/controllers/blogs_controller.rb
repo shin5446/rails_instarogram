@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
   def show
     unless current_user == nil
        @favorite = current_user.favorites.find_by(blog_id: @blog.id)
-    end             
+    end
   end
 
   # GET /blogs/new
@@ -24,9 +24,9 @@ class BlogsController < ApplicationController
       @blog = Blog.new
     end
   end
-  
+
   def confirm
-    @blog = current_user.blogs.build(blog_params) 
+    @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
   end
 
@@ -85,14 +85,14 @@ class BlogsController < ApplicationController
   def blog_params
     params.require(:blog).permit(:title, :content, :image, :image_cache, :user_id)
   end
-  
+
   def logged_in_user
     unless logged_in?
       flash[:danger] = "ログインしてください！"
       redirect_to new_session_path
     end
   end
-  
+
   def correct_user
     unless current_user.id == @blog.user_id
       flash[:danger] = "他人の投稿は編集できません！"

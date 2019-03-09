@@ -15,7 +15,7 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-    
+
     <% if logged_in? %>
       <p id = "header_logo" class="btn btn-default"><%= link_to "プロフィール", user_path(current_user.id) %></p>
       <p id = "header_logo" class="btn btn-default"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></p>
